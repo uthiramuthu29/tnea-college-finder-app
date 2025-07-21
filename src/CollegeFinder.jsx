@@ -23,7 +23,7 @@ export default function CollegeFinder() {
         })
         .then((data) => {
 
-          if (!Array.isArray(data.collegeData)) {
+          if (!Array.isArray(data)) {
           throw new Error("Invalid data format");
         }
 
@@ -122,7 +122,7 @@ export default function CollegeFinder() {
           
         </div>
         {/* College Result Component */}
-          <CollegeResults colleges={filteredColleges} submitted={submitted} selectedCommunity={community} />
+          {submitted && (<CollegeResults colleges={filteredColleges} submitted={submitted} selectedCommunity={community} />)}
       </div>
     </>
   );
