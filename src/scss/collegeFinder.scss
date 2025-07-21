@@ -1,0 +1,37 @@
+.find-you-college {
+    max-width: 500px;
+    margin: auto;
+    color: black;
+  h2 {
+    font-size: 45px;
+  }
+
+  form {
+    .form-dropdown {
+        display: flex;
+        justify-content: space-between;
+      label {
+        font-size: 24px;
+      }
+      select { 
+        width: 300px;
+        border: none;
+      }
+    }
+    .form-text {
+        display: flex;
+        justify-content: space-between;
+      label {
+        font-size: 24px;
+        color: black;
+      }
+      input {
+        width: 300px;
+      }
+    }
+
+    .submit{
+
+    }
+  }
+}
