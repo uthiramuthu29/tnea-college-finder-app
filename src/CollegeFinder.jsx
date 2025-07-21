@@ -22,6 +22,11 @@ export default function CollegeFinder() {
           return response.json();
         })
         .then((data) => {
+
+          if (!Array.isArray(data.collegeData)) {
+          throw new Error("Invalid data format");
+        }
+
           setCollegeData(data);
           const uniqueDistricts = [
             ...new Set(data.map((college) => college.District?.trim())),
