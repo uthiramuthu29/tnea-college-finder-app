@@ -172,19 +172,21 @@ export default function CollegeFinder() {
                     />
                   </div>
 
-                  <button className="submit">Submit</button>
+                  <button className="submit">Search</button>
                 </form>
                 <div className="d-lg-none d-block">
-                <CollegeSearchFilter
-                  collegeCode={collegeCode}
-                  setCollegeCode={setCollegeCode}
-                  collegeName={collegeName}
-                  setCollegeName={setCollegeName}
-                  handleCollegeFilterSubmit={handleCollegeFilterSubmit}
-                />
+                  <CollegeSearchFilter
+                    collegeCode={collegeCode}
+                    setCollegeCode={setCollegeCode}
+                    collegeName={collegeName}
+                    setCollegeName={setCollegeName}
+                    handleCollegeFilterSubmit={handleCollegeFilterSubmit}
+                    collegeData={submitted ? filteredColleges : []} // ✅ only show dropdowns after search
+                    isSearchSubmitted={submitted}
+                  />
+                </div>
               </div>
-              </div>
-              
+
               {/* College Result Component */}
               <div className="table-wrapper">
                 {submitted && (
@@ -204,6 +206,8 @@ export default function CollegeFinder() {
                   collegeName={collegeName}
                   setCollegeName={setCollegeName}
                   handleCollegeFilterSubmit={handleCollegeFilterSubmit}
+                  collegeData={submitted ? filteredColleges : []} // ✅ only show dropdowns after search
+                  isSearchSubmitted={submitted}
                 />
               </div>
             </div>

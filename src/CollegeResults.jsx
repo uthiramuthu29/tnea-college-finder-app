@@ -11,11 +11,12 @@ export default function CollegeResults({
 
   return (
 
-      <div className="table-responsive">
+      <div className="table-responsive table-scroller">
         {submitted && colleges?.length > 0 ? (
           <table className="table table-striped-columns table-bordered college-results">
             <thead>
               <tr>
+                <th>College Code</th>
                 <th>College Name</th>
                 <th>District</th>
                 <th>Branch</th>
@@ -26,6 +27,7 @@ export default function CollegeResults({
             <tbody>
               {colleges.map((college, index) => (
                 <tr key={index}>
+                  <td>{college["College Code"]}</td>
                   <td>{college["College Name"]}</td>
                   <td>{college["District"]}</td>
                   <td>{college["Branch Name"]}</td>
